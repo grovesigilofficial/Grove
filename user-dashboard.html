@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grove • Home</title>
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    min-height:100vh;
+
+    background:#0b0f0d;
+
+    color:#d8ddd9;
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    padding:40px;
+
+}
+
+
+
+.container{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+
+
+h1{
+
+    color:#2f6e4a;
+
+    text-shadow:
+    0 0 8px rgba(47,110,74,.45),
+    0 0 18px rgba(47,110,74,.20);
+
+}
+
+
+
+button{
+
+    background:#2f6e4a;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+    opacity:.85;
+
+}
+
+
+
+.card{
+
+    background:#101512;
+
+    border:1px solid #232b27;
+
+    border-radius:16px;
+
+    padding:30px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.card h2{
+
+    margin-bottom:12px;
+
+}
+
+
+
+.card p{
+
+    color:#8f9893;
+
+    margin-bottom:8px;
+
+}
+
+
+
+textarea{
+
+    width:100%;
+
+    height:120px;
+
+    background:#0b0f0d;
+
+    border:1px solid #232b27;
+
+    border-radius:10px;
+
+    padding:15px;
+
+    color:white;
+
+    resize:none;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.post{
+
+    border-top:1px solid #232b27;
+
+    padding-top:20px;
+
+    margin-top:20px;
+
+}
+
+
+
+.post strong{
+
+    color:#2f6e4a;
+
+}
+
+
+
+.post-time{
+
+    font-size:.8rem;
+
+    color:#58635d;
+
+}
+
+
+
+.message{
+
+    margin-top:12px;
+
+    color:#2f6e4a;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+
+<header>
+
+
+<h1>
+Grove
+</h1>
+
+
+
+<button id="logout">
+
+Logout
+
+</button>
+
+
+
+</header>
+
+
+
+
+
+
+<div class="card">
+
+
+<h2 id="username">
+
+Loading profile...
+
+</h2>
+
+
+
+<p id="user-email">
+
+Loading email...
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+Create Post
+</h2>
+
+
+
+<textarea 
+id="post-content"
+placeholder="Share something with the Grove...">
+</textarea>
+
+
+
+<button id="create-post">
+
+Post
+
+</button>
+
+
+
+<div id="post-message">
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+Grove Suggestion Box
+</h2>
+
+
+<p>
+Have an idea, feature request, or feedback for Grove?
+</p>
+
+
+
+<textarea
+id="suggestion-content"
+placeholder="Share your idea...">
+</textarea>
+
+
+
+<button id="send-suggestion">
+
+Send Suggestion
+
+</button>
+
+
+
+<div id="suggestion-message" class="message">
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<h2>
+
+Grove Feed
+
+</h2>
+
+
+
+<div id="feed">
+
+
+<p>
+Loading posts...
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+
+<script src="js/permissions.js"></script>
+
+<script src="js/user-dashboard.js"></script>
+
+
+
+</body>
+
+    </html>
