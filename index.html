@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grove</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    background:#0b0f0d;
+
+    min-height:100vh;
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    color:#d8ddd9;
+
+}
+
+
+
+header{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+    padding:24px;
+
+}
+
+
+
+.nav-button{
+
+    color:#8f9893;
+
+    text-decoration:none;
+
+    border:1px solid #232b27;
+
+    padding:10px 16px;
+
+    border-radius:8px;
+
+    transition:.2s;
+
+}
+
+
+
+.nav-button:hover{
+
+    color:#2f6e4a;
+
+    border-color:#2f6e4a;
+
+}
+
+
+
+main{
+
+    min-height:calc(100vh - 72px);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    gap:40px;
+
+}
+
+
+
+h1{
+
+    color:#2f6e4a;
+
+    font-size:5rem;
+
+    letter-spacing:2px;
+
+    text-shadow:
+    0 0 10px rgba(47,110,74,.55),
+    0 0 25px rgba(47,110,74,.30);
+
+}
+
+
+
+.team-card{
+
+    width:350px;
+
+    padding:28px;
+
+    background:#101512;
+
+    border:1px solid #232b27;
+
+    border-radius:14px;
+
+    text-align:center;
+
+}
+
+
+
+.team-card h2{
+
+    color:#d8ddd9;
+
+    margin-bottom:14px;
+
+    font-size:1.35rem;
+
+}
+
+
+
+.team-card p{
+
+    color:#8f9893;
+
+    line-height:1.6;
+
+    font-size:.95rem;
+
+    margin-bottom:22px;
+
+}
+
+
+
+.team-button{
+
+    display:inline-block;
+
+    color:white;
+
+    background:#2f6e4a;
+
+    text-decoration:none;
+
+    padding:11px 20px;
+
+    border-radius:8px;
+
+    transition:.2s;
+
+}
+
+
+
+.team-button:hover{
+
+    opacity:.85;
+
+}
+
+
+
+.admin-console{
+
+    position:fixed;
+
+    bottom:20px;
+
+    right:20px;
+
+    color:#58635d;
+
+    font-size:.85rem;
+
+    text-decoration:none;
+
+    opacity:.7;
+
+    transition:.2s;
+
+}
+
+
+
+.admin-console:hover{
+
+    color:#2f6e4a;
+
+    opacity:1;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+
+<a href="login.html" class="nav-button">
+
+Login
+
+</a>
+
+
+
+<a href="signup.html" class="nav-button">
+
+Create Account
+
+</a>
+
+
+
+<a href="team-login.html" class="nav-button">
+
+Team Login
+
+</a>
+
+
+</header>
+
+
+
+
+
+<main>
+
+
+<h1>
+
+Grove
+
+</h1>
+
+
+
+
+
+<div class="team-card">
+
+
+<h2>
+
+Join the Grove Community
+
+</h2>
+
+
+
+<p>
+
+Help shape Grove as it grows.
+Beta testers, moderators, and contributors can help build the future of Grove.
+
+</p>
+
+
+
+<a href="moderator-apply.html" class="team-button">
+
+Apply for Grove Access
+
+</a>
+
+
+
+</div>
+
+
+
+</main>
+
+
+
+
+
+<a href="console-login.html" class="admin-console">
+
+⚙ Console
+
+</a>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase.js"></script>
+
+
+<script>
+
+
+window.addEventListener("load", async ()=>{
+
+
+    const { data, error } =
+    await window.groveClient.auth.getSession();
+
+
+
+    console.log(
+        "Grove session:",
+        data,
+        error
+    );
+
+
+});
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
